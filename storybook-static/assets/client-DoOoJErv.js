@@ -1,0 +1,1 @@
+import{r as e}from"./index-CvEbaogi.js";var _,t=e;{var r=t.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;_=function(n,o){r.usingClientEntryPoint=!0;try{return t.createRoot(n,o)}finally{r.usingClientEntryPoint=!1}}}export{_ as c};

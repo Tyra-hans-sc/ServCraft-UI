@@ -1,0 +1,1 @@
+import{R as e}from"./index-BVW8D_1y.js";import{P as n}from"./PasswordInput-RQKqnngr.js";const c=r=>{const{innerRef:a,value:s,...t}=r;return e.createElement(e.Fragment,null,e.createElement(n,{mt:"var(--mantine-spacing-sm)",...t}))};export{c as S};

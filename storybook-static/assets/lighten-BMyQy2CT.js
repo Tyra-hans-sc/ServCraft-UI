@@ -1,0 +1,1 @@
+import{t as $}from"./MantineThemeProvider-3Ly_klpC.js";function b(t,i){if(t.startsWith("var("))return`color-mix(in srgb, ${t}, white ${i*100}%)`;const{r:s,g:a,b:g,a:o}=$(t),r=n=>Math.round(n+(255-n)*i);return`rgba(${r(s)}, ${r(a)}, ${r(g)}, ${o})`}export{b as l};

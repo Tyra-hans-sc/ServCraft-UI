@@ -1,0 +1,1 @@
+import{d as e,u as a,D as r}from"./DateInput-D0kfNzBZ.js";const s=t=>{e.extend(a);const{innerRef:n}=t;return React.createElement(r,{mt:"var(--mantine-spacing-sm)",...t,valueFormat:"D MMMM, YYYY",style:{td:{borderColor:"transparent !important"}},locale:"en",popoverProps:{withinPortal:!0}})};export{s as S};

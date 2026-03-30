@@ -1,0 +1,1 @@
+import"./jsx-runtime-CniKdCFI.js";import{r as t}from"./index-BVW8D_1y.js";const e=t.createContext({dir:"ltr",toggleDirection:()=>{},setDirection:()=>{}});function i(){return t.useContext(e)}export{i as u};

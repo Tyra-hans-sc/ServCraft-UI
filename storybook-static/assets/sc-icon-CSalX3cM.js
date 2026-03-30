@@ -1,0 +1,1 @@
+import{j as s}from"./jsx-runtime-CniKdCFI.js";function i({name:t,onClick:r,height:e="1.5rem",folder:n="icons"}){const o=()=>{r&&r()};return s.jsx(s.Fragment,{children:s.jsx("img",{src:`/${n}/${t}.svg`,style:{height:e,cursor:r?"pointer":"default"},onClick:o})})}export{i as S};

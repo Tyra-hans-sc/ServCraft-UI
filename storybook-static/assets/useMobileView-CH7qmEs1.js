@@ -1,0 +1,1 @@
+import{R as s,r as t}from"./index-BVW8D_1y.js";const a=s.createContext({});function r(){const e=t.useContext(a),[o,i]=t.useState(e.mobileView);return t.useEffect(()=>{i(e.mobileView)},[e.mobileView]),[o]}export{a as P,r as u};
