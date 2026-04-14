@@ -1,0 +1,390 @@
+.droppableSlot {
+  /*position: relative;*/
+  width: 100%;
+  display: flex; /* Avoid flex to prevent sub-pixel height jitter in table-based layouts */
+  /*box-sizing: border-box; !* Keep padding/border inside the box *!*/
+  /*transition: background-color 0.2s;*/
+  /*z-index: 5; !* Add base z-index to ensure slots are above items *!*/
+}
+
+.isOver {
+  /* Use box-shadow instead of border to avoid layout shift */
+  box-shadow: inset 0 0 0 3px var(--mantine-color-scBlue-6);
+  /* Add a subtle animation for the dashed border effect */
+  animation: dashedBorder 2s linear infinite;
+  z-index: 3; /* Higher z-index to ensure it's above items (including scBlue items) but below header cells */
+  opacity: .7; /* Full opacity for better visibility */
+  background-color: var(--mantine-color-scBlue-1) !important; /* Explicit background color for Chrome */
+}
+
+/* Apply styles to child elements when parent has isOver class */
+.isOver > * {
+  /*box-shadow: inset 0 0 0 3px var(--mantine-color-scBlue-6);*/
+  /* Add a subtle animation for the dashed border effect */
+  /*animation: dashedBorder 1s linear infinite;*/
+  /*background-color: var(--mantine-color-scBlue-1) !important;*/
+  opacity: 0.1;
+}
+
+/* Apply styles to all nested elements when parent has isOver class */
+.isOver * {
+  /*background-color: var(--mantine-color-scBlue-5) !important;*/
+  /*box-shadow: inset 0 0 0 3px var(--mantine-color-scBlue-6);*/
+  /* Add a subtle animation for the dashed border effect */
+  /*animation: dashedBorder 1s linear infinite;*/
+  /*z-index: 1; !* Higher z-index to ensure it's above items and visible in all browsers *!*/
+  /*opacity: .7; !* Full opacity for better visibility *!*/
+  /*background-color: var(--mantine-color-scBlue-1) !important; !* Explicit background color for Chrome *!*/
+}
+
+@keyframes dashedBorder {
+  0% {
+    box-shadow: inset 0 0 0 3px var(--mantine-color-scBlue-3);
+  }
+  50% {
+    box-shadow: inset 0 0 0 3px var(--mantine-color-scBlue-7);
+  }
+  100% {
+    box-shadow: inset 0 0 0 3px var(--mantine-color-scBlue-3);
+  }
+}
+
+/* Add a subtle indicator when hovering over the slot */
+.droppableSlot:hover:not(.isOver) {
+  background-color: var(--mantine-color-gray-1);
+}
+
+/* Style for all slots when any job is being dragged */
+.isDragging {
+  background-color: var(--mantine-color-gray-0);
+  /*transition: all 0.2s ease;*/
+}
+
+/* Make the slot more prominent when both dragging and hovering */
+.isDragging:hover:not(.isOver) {
+  background-color: var(--mantine-color-scBlue-0);
+  /* Use box-shadow instead of border to avoid layout shift */
+  box-shadow: inset 0 0 0 1px var(--mantine-color-scBlue-5);
+}
+
+/* Highlight subsequent time slots while dragging based on appointment duration.
+   When the current droppable slot is the drop target (isOver) and has a span-N class,
+   highlight the next N siblings with the same background color. */
+
+/* 1 subsequent slot */
+.timelineHighlight.span-1.isOver + .droppableSlot {
+  background-color: var(--mantine-color-scBlue-1) !important;
+}
+
+/* 2 subsequent slots */
+.timelineHighlight.span-2.isOver + .droppableSlot,
+.timelineHighlight.span-2.isOver + .droppableSlot + .droppableSlot {
+  background-color: var(--mantine-color-scBlue-1) !important;
+}
+
+/* 3 subsequent slots */
+.timelineHighlight.span-3.isOver + .droppableSlot,
+.timelineHighlight.span-3.isOver + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-3.isOver + .droppableSlot + .droppableSlot + .droppableSlot {
+  background-color: var(--mantine-color-scBlue-1) !important;
+}
+
+/* 4 subsequent slots */
+.timelineHighlight.span-4.isOver + .droppableSlot,
+.timelineHighlight.span-4.isOver + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-4.isOver + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-4.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot {
+  background-color: var(--mantine-color-scBlue-1) !important;
+}
+
+/* 5 subsequent slots */
+.timelineHighlight.span-5.isOver + .droppableSlot,
+.timelineHighlight.span-5.isOver + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-5.isOver + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-5.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-5.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot {
+  background-color: var(--mantine-color-scBlue-1) !important;
+}
+
+/* 6 subsequent slots */
+.timelineHighlight.span-6.isOver + .droppableSlot,
+.timelineHighlight.span-6.isOver + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-6.isOver + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-6.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-6.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-6.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot {
+  background-color: var(--mantine-color-scBlue-1) !important;
+}
+
+/* 7 subsequent slots */
+.timelineHighlight.span-7.isOver + .droppableSlot,
+.timelineHighlight.span-7.isOver + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-7.isOver + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-7.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-7.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-7.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-7.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot {
+  background-color: var(--mantine-color-scBlue-1) !important;
+}
+
+/* 8 subsequent slots */
+.timelineHighlight.span-8.isOver + .droppableSlot,
+.timelineHighlight.span-8.isOver + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-8.isOver + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-8.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-8.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-8.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-8.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-8.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot {
+  background-color: var(--mantine-color-scBlue-1) !important;
+}
+
+/* 9 subsequent slots */
+.timelineHighlight.span-9.isOver + .droppableSlot,
+.timelineHighlight.span-9.isOver + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-9.isOver + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-9.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-9.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-9.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-9.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-9.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-9.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot {
+  background-color: var(--mantine-color-scBlue-1) !important;
+}
+
+/* 10 subsequent slots */
+.timelineHighlight.span-10.isOver + .droppableSlot,
+.timelineHighlight.span-10.isOver + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-10.isOver + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-10.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-10.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-10.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-10.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-10.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-10.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-10.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot {
+  background-color: var(--mantine-color-scBlue-1) !important;
+}
+
+/* 11 subsequent slots */
+.timelineHighlight.span-11.isOver + .droppableSlot,
+.timelineHighlight.span-11.isOver + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-11.isOver + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-11.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-11.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-11.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-11.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-11.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-11.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-11.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-11.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot {
+  background-color: var(--mantine-color-scBlue-1) !important;
+}
+
+/* 12 subsequent slots */
+.timelineHighlight.span-12.isOver + .droppableSlot,
+.timelineHighlight.span-12.isOver + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-12.isOver + .droppableSlot + .droppableSlot + .droppableSlot,
+.span-12.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.span-12.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.span-12.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.span-12.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.span-12.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.span-12.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.span-12.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.span-12.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.span-12.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.span-12.isOver + .droppableSlot > *,
+.span-12.isOver + .droppableSlot + .droppableSlot > *,
+.span-12.isOver + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-12.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-12.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-12.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-12.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-12.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-12.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-12.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-12.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-12.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > * {
+  background-color: var(--mantine-color-scBlue-1) !important;
+}
+
+
+/* Ensure highlighted sibling slots propagate background to their direct children so it matches the hovered slot */
+.span-1.isOver + .droppableSlot > * {
+  background-color: var(--mantine-color-scBlue-1) !important;
+}
+
+.span-2.isOver + .droppableSlot > *,
+.span-2.isOver + .droppableSlot + .droppableSlot > * {
+  background-color: var(--mantine-color-scBlue-1) !important;
+}
+
+.span-3.isOver + .droppableSlot > *,
+.span-3.isOver + .droppableSlot + .droppableSlot > *,
+.span-3.isOver + .droppableSlot + .droppableSlot + .droppableSlot > * {
+  background-color: var(--mantine-color-scBlue-1) !important;
+}
+
+.span-4.isOver + .droppableSlot > *,
+.span-4.isOver + .droppableSlot + .droppableSlot > *,
+.span-4.isOver + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-4.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > * {
+  background-color: var(--mantine-color-scBlue-1) !important;
+}
+
+.span-5.isOver + .droppableSlot > *,
+.span-5.isOver + .droppableSlot + .droppableSlot > *,
+.span-5.isOver + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-5.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-5.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > * {
+  background-color: var(--mantine-color-scBlue-1) !important;
+}
+
+.span-6.isOver + .droppableSlot > *,
+.span-6.isOver + .droppableSlot + .droppableSlot > *,
+.span-6.isOver + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-6.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-6.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-6.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > * {
+  background-color: var(--mantine-color-scBlue-1) !important;
+}
+
+.span-7.isOver + .droppableSlot > *,
+.span-7.isOver + .droppableSlot + .droppableSlot > *,
+.span-7.isOver + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-7.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-7.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-7.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-7.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > * {
+  background-color: var(--mantine-color-scBlue-1) !important;
+}
+
+.span-8.isOver + .droppableSlot > *,
+.span-8.isOver + .droppableSlot + .droppableSlot > *,
+.span-8.isOver + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-8.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-8.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-8.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-8.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-8.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > * {
+  background-color: var(--mantine-color-scBlue-1) !important;
+}
+
+.span-9.isOver + .droppableSlot > *,
+.span-9.isOver + .droppableSlot + .droppableSlot > *,
+.span-9.isOver + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-9.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-9.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-9.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-9.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-9.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-9.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > * {
+  background-color: var(--mantine-color-scBlue-1) !important;
+}
+
+.span-10.isOver + .droppableSlot > *,
+.span-10.isOver + .droppableSlot + .droppableSlot > *,
+.span-10.isOver + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-10.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-10.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-10.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-10.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-10.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-10.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-10.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > * {
+  background-color: var(--mantine-color-scBlue-1) !important;
+}
+
+.span-11.isOver + .droppableSlot > *,
+.span-11.isOver + .droppableSlot + .droppableSlot > *,
+.span-11.isOver + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-11.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-11.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-11.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-11.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-11.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-11.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-11.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > *,
+.span-11.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > * {
+  background-color: var(--mantine-color-scBlue-1) !important;
+}
+
+
+/* Export span utility classes to ensure CSS Modules exposes them for use in React */
+.span-1 {}
+.span-2 {}
+.span-3 {}
+.span-4 {}
+.span-5 {}
+.span-6 {}
+.span-7 {}
+.span-8 {}
+.span-9 {}
+.span-10 {}
+.span-11 {}
+.span-12 {}
+
+/* Timeline scoping utility to export class from CSS Modules */
+.timelineHighlight {}
+
+/* Progressive opacity for highlighted subsequent timeline slots (up to 6 for clarity) */
+/* 1 subsequent */
+.timelineHighlight.span-1.isOver + .droppableSlot,
+.timelineHighlight.span-1.isOver + .droppableSlot > * {
+  opacity: 0.6;
+}
+
+/* 2 subsequent */
+.timelineHighlight.span-2.isOver + .droppableSlot,
+.timelineHighlight.span-2.isOver + .droppableSlot > * {
+  opacity: 0.6;
+}
+.timelineHighlight.span-2.isOver + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-2.isOver + .droppableSlot + .droppableSlot > * {
+  opacity: 0.45;
+}
+
+/* 3 subsequent */
+.timelineHighlight.span-3.isOver + .droppableSlot,
+.timelineHighlight.span-3.isOver + .droppableSlot > * { opacity: 0.6; }
+.timelineHighlight.span-3.isOver + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-3.isOver + .droppableSlot + .droppableSlot > * { opacity: 0.45; }
+.timelineHighlight.span-3.isOver + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-3.isOver + .droppableSlot + .droppableSlot + .droppableSlot > * { opacity: 0.3; }
+
+/* 4 subsequent */
+.timelineHighlight.span-4.isOver + .droppableSlot,
+.timelineHighlight.span-4.isOver + .droppableSlot > * { opacity: 0.6; }
+.timelineHighlight.span-4.isOver + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-4.isOver + .droppableSlot + .droppableSlot > * { opacity: 0.45; }
+.timelineHighlight.span-4.isOver + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-4.isOver + .droppableSlot + .droppableSlot + .droppableSlot > * { opacity: 0.3; }
+.timelineHighlight.span-4.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-4.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > * { opacity: 0.2; }
+
+/* 5 subsequent */
+.timelineHighlight.span-5.isOver + .droppableSlot,
+.timelineHighlight.span-5.isOver + .droppableSlot > * { opacity: 0.6; }
+.timelineHighlight.span-5.isOver + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-5.isOver + .droppableSlot + .droppableSlot > * { opacity: 0.45; }
+.timelineHighlight.span-5.isOver + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-5.isOver + .droppableSlot + .droppableSlot + .droppableSlot > * { opacity: 0.3; }
+.timelineHighlight.span-5.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-5.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > * { opacity: 0.2; }
+.timelineHighlight.span-5.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-5.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > * { opacity: 0.1; }
+
+/* 6 subsequent */
+.timelineHighlight.span-6.isOver + .droppableSlot,
+.timelineHighlight.span-6.isOver + .droppableSlot > * { opacity: 0.6; }
+.timelineHighlight.span-6.isOver + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-6.isOver + .droppableSlot + .droppableSlot > * { opacity: 0.45; }
+.timelineHighlight.span-6.isOver + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-6.isOver + .droppableSlot + .droppableSlot + .droppableSlot > * { opacity: 0.3; }
+.timelineHighlight.span-6.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-6.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > * { opacity: 0.2; }
+.timelineHighlight.span-6.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-6.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > * { opacity: 0.1; }
+.timelineHighlight.span-6.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot,
+.timelineHighlight.span-6.isOver + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot + .droppableSlot > * { opacity: 0.05; }

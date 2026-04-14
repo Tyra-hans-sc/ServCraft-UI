@@ -1,0 +1,6 @@
+
+.linkCellContainer  {
+    &:hover .copyItem {
+        opacity: 1 !important;
+    }
+}

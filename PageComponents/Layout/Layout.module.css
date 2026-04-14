@@ -1,0 +1,11 @@
+
+.sideBarDrag {
+    cursor: ew-resize;
+    border-left: 2px solid var(--mantine-color-gray-2);
+    &:hover {
+        border-left: 2px solid var(--mantine-color-scBlue-5);
+    }
+    &.sideBarDragActive {
+        border-left: 2px solid var(--mantine-color-scBlue-5);
+    }
+}

@@ -1,0 +1,61 @@
+.schedulerSlot {
+  /*cursor: pointer;*/
+  /*transition: background-color 0.2s ease;*/
+  /*padding: 4px;*/
+  /*height: 100%; !* Uncomment to ensure full height *!*/
+  /*width: 100%; !* Uncomment to ensure full width *!*/
+  /*box-sizing: border-box;*/
+  /*flex: 1; !* Add flex: 1 to ensure it fills the parent flex container *!*/
+}
+
+.schedulerSlot:hover {
+  background-color: var(--mantine-color-gray-2);
+}
+
+.schedulerSlot.weekend {
+  background-color: var(--mantine-color-gray-1);
+}
+
+.schedulerSlot.weekday {
+  background-color: white;
+}
+
+.currentMonth {
+  opacity: 1;
+}
+
+.otherMonth {
+  opacity: 0.5;
+}
+
+.schedulerSlot .today {
+  background-color: var(--mantine-color-blue-6);
+  color: white;
+  font-weight: 700;
+}
+
+.schedulerSlot .notToday {
+  background-color: transparent;
+  font-weight: 400;
+}
+
+.notTodayCurrentMonth {
+  color: inherit;
+}
+
+.notTodayOtherMonth {
+  color: var(--mantine-color-gray-6);
+}
+
+/* Today styling applied directly to the slot */
+.schedulerSlot.today {
+  background-color: var(--mantine-color-gray-0);
+  outline: 1px solid var(--mantine-color-scBlue-3);
+  outline-offset: -2px;
+    /*z-index: 1;*/
+}
+
+/* Preserve today highlight on hover */
+.schedulerSlot.today:hover {
+  background-color: var(--mantine-color-scBlue-0);
+}

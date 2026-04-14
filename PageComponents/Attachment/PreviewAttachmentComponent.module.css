@@ -1,0 +1,72 @@
+.zoomControlBar {
+  transition: background-color 0.5s, filter 0.5s;
+  position: absolute;
+  height: 50vh;
+  float: right;
+  max-height: 500px;
+  width: 16px;
+  top: 4em;
+  right: 22px;
+  gap: .8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  filter: drop-shadow(rgba(255, 255, 255, 0.5) 0px 0px 2px);
+  border-radius: 2rem;
+  z-index: 10;
+  padding: .8rem;
+  opacity: 1;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.18);
+    filter: drop-shadow(rgba(255, 255, 255, 0.6) 0px 0px 4px);
+  }
+}
+
+.zoomControlBar:active {
+  background-color: rgba(0, 0, 0, 0.18);
+}
+
+.zoomContainer {
+  border: 1px solid lightgrey;
+  height: 80vh;
+  max-height: 900px;
+
+  max-width: 1200px;
+  width: calc(100vw - 3rem);
+  overflow: auto;
+  position: relative;
+}
+
+/* Small devices (phones) */
+@media screen and (max-width: 400px) {
+  .zoomContainer {
+    max-width: 95vw;
+    width: calc(100vw - 1rem);
+    max-height: 80vh;
+  }
+}
+
+/* Medium devices (tablets) */
+@media screen and (min-width: 400px) and (max-width: 768px) {
+  .zoomContainer {
+    max-width: 85vw;
+    max-height: 70vh;
+    width: calc(100vw - 3rem);
+  }
+}
+
+/* Large devices (laptops/desktops) */
+@media screen and  (min-width: 768px) and (max-width: 1200px) {
+  .zoomContainer {
+    max-width: 80vw;
+  }
+}
+
+/*!* Extra large devices *!
+@media screen and (min-width: 1201px) {
+  .zoomContainer {
+    max-width: 85vw;
+  }
+}*/
+

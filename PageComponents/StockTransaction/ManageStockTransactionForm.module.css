@@ -1,0 +1,55 @@
+.title {
+    color: #003ED0;
+    font-size: 1.125rem;
+    font-weight: bold;
+    /* margin-bottom: 1rem; */
+    margin-top: 0.5rem;
+}
+
+.subtitle {
+    font-size: 1.125rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.container {
+    max-width: 510px;
+    position: relative;
+    width: 100%;
+}
+
+.container + .container {
+    margin-left: 2rem;
+}
+
+.buttonContainer {
+    margin-top: 2rem;
+}
+
+.buttonContainerTop {
+    margin-top: 0;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.row.left {
+    justify-content: left;
+}
+
+.link {
+    color: var(--blue-primary-color);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.marginRight {
+    margin-right: 1rem;
+}
+
+.printButton {
+    cursor: pointer;
+}

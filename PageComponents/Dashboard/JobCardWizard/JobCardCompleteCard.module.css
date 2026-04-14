@@ -1,0 +1,59 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mantine-spacing-md);
+}
+
+.header {
+  border-bottom: 1px solid var(--mantine-color-gray-4);
+  padding-bottom: var(--mantine-spacing-sm);
+}
+
+.previewWrapper {
+  background-color: var(--mantine-color-scBlue-0);
+  border: 1px solid var(--mantine-color-scBlue-1);
+  border-radius: var(--mantine-radius-md);
+  padding: var(--mantine-spacing-md);
+}
+
+.iframeBox {
+  width: 100%;
+  background-color: white;
+  border: 1px solid var(--mantine-color-gray-3);
+  border-radius: var(--mantine-radius-sm);
+  height:40vh;
+  overflow: auto;
+}
+
+.topRow {
+  display: flex;
+  align-items: center;
+  gap: var(--mantine-spacing-sm);
+}
+
+.jobNumber {
+  font-weight: 600;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: var(--mantine-spacing-sm);
+  justify-content: space-between;
+}
+
+.myButton:disabled,
+.myButton[data-disabled] {
+  background-color:#00000000; /* Custom background color */
+  color: black; /* Custom text color */
+  cursor: not-allowed; /* Change cursor */
+  opacity: 0.7; /* Adjust opacity */
+}
+
+@media (max-height : 620px) {
+.iframeBox {
+ height:25vh;
+}
+}
+
+

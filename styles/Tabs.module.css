@@ -1,0 +1,46 @@
+
+.scTab {
+    /*z-index: 5;*/
+    /*margin-bottom: -1px;*/
+    padding-bottom: 12px;
+    padding-inline: 15px;
+    color: var(--mantine-color-gray-7);
+    border-bottom-color: transparent;
+    background-color: transparent;
+    font-weight: bold;
+    .counter {
+        background-color: var(--mantine-color-gray-5) !important;
+    }
+    &:hover {
+        /* color: var(--mantine-color-gray-7); */
+        background-color: var(--mantine-color-gray-1) !important;
+    }
+    &[data-active] {
+        border-bottom-width: 2px;
+        color: var(--mantine-color-scBlue-7) !important;
+        border-bottom-color: var(--mantine-color-scBlue-7) !important;
+        background-color: #003ED010 !important;
+        .counter {
+            background-color: var(--mantine-color-scBlue-7) !important;
+        }
+        /*borderColor: theme.colors.blue[7],*/
+        /*color: theme.white,*/
+    }
+}
+
+.scTabList {
+    display: flex;
+    border-color: transparent !important;
+
+
+}
+
+.scTabList::before {
+    /*border-bottom-width: 0 !important;*/
+    border-bottom-color: transparent !important;
+}
+
+.scTabLabel {
+    font-weight: 500;
+    margin-bottom: 3px;
+}

@@ -1,0 +1,233 @@
+.schedulerContainer {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    /*padding: -15px;*/
+    /*margin-right: -15px;*/
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*width: 100%;*/
+  /*height: 100%;*/
+  /*position: relative;*/
+  /*border: 1px solid var(--mantine-color-gray-3);*/
+  /*border-radius: var(--mantine-radius-md);*/
+  /*padding: var(--mantine-spacing-md);*/
+}
+
+.loaderContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.errorContainer {
+  padding: var(--mantine-spacing-md);
+  background-color: var(--mantine-color-red-0);
+  border-radius: 5px;
+  margin-bottom: var(--mantine-spacing-md);
+}
+
+/* Kendo Scheduler custom styling */
+.schedulerContainer :global(.k-scheduler) {
+  /*border-color: var(--mantine-color-gray-3);*/
+  background-color: var(--mantine-color-white);
+  font-family: var(--mantine-font-family);
+}
+
+.schedulerContainer :global(.k-scheduler-toolbar) {
+  background-color: var(--mantine-color-gray-0);
+  /*border-color: var(--mantine-color-gray-3);*/
+}
+
+.schedulerContainer :global(.k-scheduler-toolbar .k-button) {
+  color: var(--mantine-color-blue-6);
+  background-color: transparent;
+}
+
+.schedulerContainer :global(.k-scheduler-toolbar .k-button.k-state-selected) {
+  background-color: var(--mantine-color-blue-6);
+  color: var(--mantine-color-white);
+}
+
+.schedulerContainer :global(.k-scheduler-footer) {
+  background-color: var(--mantine-color-gray-0);
+  /*border-color: var(--mantine-color-gray-3);*/
+}
+
+.schedulerContainer :global(.k-scheduler-header) {
+  /*background-color: var(--mantine-color-gray-0);*/
+  /*border-color: var(--mantine-color-gray-3);*/
+}
+
+.schedulerContainer :global(.k-scheduler-header .k-link) {
+  color: var(--mantine-color-dark-6);
+}
+
+.schedulerContainer :global(.k-scheduler-header .k-today) {
+  background-color: var(--mantine-color-blue-0);
+}
+
+.schedulerContainer :global(.k-scheduler-header .k-today .k-link) {
+  color: var(--mantine-color-blue-6);
+  font-weight: bold;
+}
+
+.schedulerContainer :global(.k-scheduler-content) {
+  background-color: var(--mantine-color-white);
+}
+
+.schedulerContainer :global(.k-event) {
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.schedulerContainer :global(.k-scheduler-layout) {
+  /*height: 100%;*/
+}
+
+/* Timeline view specific styles */
+.schedulerContainer :global(.k-scheduler-timelineview) {
+  /*border-color: var(--mantine-color-gray-3);*/
+}
+
+.schedulerContainer :global(.k-scheduler-timelineview .k-scheduler-header-wrap) {
+  background-color: var(--mantine-color-gray-0);
+}
+
+/* Left align text in resource cells (employee names) */
+.schedulerContainer :global(.k-scheduler-timelineview .k-resource-cell) {
+    justify-content: flex-start;
+    margin: 0;
+}
+
+/* Month view specific styles */
+.schedulerContainer :global(.k-scheduler-monthview .k-scheduler-table) {
+  background-color: var(--mantine-color-white);
+}
+
+.schedulerContainer :global(.k-scheduler-monthview .k-event) {
+  margin: 0 1px;
+}
+
+/* Hide all day row when configured */
+.hideAllDayRow :global(.k-scheduler .k-scheduler-head .k-scheduler-group:nth-child(2)) {
+  display: none;
+}
+
+/* Ensure month view slots can grow with content */
+/*.schedulerContainer :global(.k-scheduler-monthview .k-scheduler-cell) {
+  height: auto !important;
+  min-height: 100px !important;
+  overflow: visible !important;
+  position: relative !important;
+}*/
+
+/* Ensure the month view table cells can grow */
+/*.schedulerContainer :global(.k-scheduler-monthview .k-scheduler-table td) {
+  height: auto !important;
+  overflow: visible !important;
+  position: relative !important;
+}*/
+
+/* Target the content container within month view cells */
+/*.schedulerContainer :global(.k-scheduler-monthview .k-scheduler-content) {
+  height: auto !important;
+  min-height: 100% !important;
+  overflow: visible !important;
+}*/
+
+/* Target the event container within month view cells */
+/*.schedulerContainer :global(.k-scheduler-monthview .k-event-container) {
+  position: static !important;
+  height: auto !important;
+  overflow: visible !important;
+}*/
+
+/* Ensure the month view table doesn't constrain height */
+/*.schedulerContainer :global(.k-scheduler-monthview table) {
+  height: auto !important;
+  table-layout: fixed !important;
+}*/
+
+/* Target the month view content wrapper */
+/*.schedulerContainer :global(.k-scheduler-monthview .k-scheduler-content .k-scheduler-table-wrap) {
+  height: auto !important;
+  overflow: visible !important;
+}*/
+
+/* Style the "more events" indicator in month view */
+/*.schedulerContainer :global(.k-more-events) {
+  height: auto !important;
+  padding: 2px 4px !important;
+  margin-top: 2px !important;
+  background-color: var(--mantine-color-blue-1) !important;
+  color: var(--mantine-color-blue-8) !important;
+  border-radius: 4px !important;
+  font-size: 11px !important;
+  text-align: center !important;
+  cursor: pointer !important;
+}
+
+!* Style the "more events" button to be more visible *!
+.schedulerContainer :global(.k-more-events .k-button) {
+  background-color: transparent !important;
+  border: none !important;
+  color: var(--mantine-color-blue-8) !important;
+  font-weight: 500 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  text-align: center !important;
+}*/
+
+/* Work hours styling */
+.schedulerContainer :global(.k-scheduler-workday) {
+  background-color: var(--mantine-color-white);
+}
+
+.schedulerContainer :global(.k-scheduler-nonworkday) {
+  background-color: var(--mantine-color-gray-1);
+}
+
+/* Current time marker styling - ensure it's visible on top of items */
+.schedulerContainer :global(.k-current-time),
+.schedulerContainer :global(.k-scheduler-current-time),
+.schedulerContainer :global(.k-current-time-indicator),
+.schedulerContainer :global(.k-scheduler-current-time-indicator) {
+  z-index: 3 !important; /* Set z-index to ensure it's above custom items */
+  background-color: var(--mantine-color-scBlue-9) !important; /* Blue color instead of default red */
+  position: absolute; /* Ensure z-index works */
+}
+.schedulerContainer :global(.k-current-time-arrow-down) {
+    border-top-color: var(--mantine-color-scBlue-9) !important;
+  /*z-index: 3 !important; !* Set z-index to ensure it's above custom items *!*/
+  background-color: transparent !important; /* Blue color instead of default red */
+  /*position: absolute; !* Ensure z-index works *!*/
+}
+
+/* Style the triangle indicator on the left */
+.schedulerContainer :global(.k-current-time::before),
+.schedulerContainer :global(.k-scheduler-current-time::before),
+.schedulerContainer :global(.k-current-time-indicator::before),
+.schedulerContainer :global(.k-scheduler-current-time-indicator::before) {
+  border-color: transparent var(--mantine-color-scBlue-9) transparent transparent !important; /* Make the triangle blue */
+}
+
+/* Specifically target the arrow-right class to fix the arrow appearance */
+.schedulerContainer :global(.k-current-time.k-current-time-arrow-right) {
+  border-left-color: var(--mantine-color-scBlue-9) !important; /* Change from red (#ff0000) to blue */
+  background-color: transparent !important; /* Ensure the background doesn't make it appear as a square */
+}
+
+/* Fix Month view "More events" button so it doesn't inherit global .k-button styles */
+.schedulerContainer :global(.k-more-events) {
+  /*display: none;*/
+    width: 95%;
+    transform: translateX(2.5%);
+    background-color: transparent;
+    pointer-events: auto;
+    height: 0;
+    /*z-index: 20;*/
+    /*margin: 0 5px 0 5px;*/
+}

@@ -1,0 +1,43 @@
+.jobListContainer {
+    max-width: 400px;
+  /*max-width: 500px;*/
+  /*min-width: 400px;*/
+}
+
+/*@media (min-width: 576px) {
+    .jobListContainer {
+        max-width: 300px;
+        min-width: 200px;
+    }
+}*/
+
+
+/*@media (min-width: 768px) {
+    .jobListContainer {
+        max-width: 350px;
+        min-width: 300px;
+    }
+}
+
+!* Media queries for responsiveness *!
+@media (min-width: 1200px) {
+  .jobListContainer {
+    max-width: 400px;
+    min-width: 350px;
+  }
+
+}*/
+
+
+@media (max-width: 768px) {
+    .jobListContainer {
+        margin-top: var(--mantine-spacing-sm);
+        max-width: 100%;
+        min-width: 300px;
+        /*min-height: 500px;*/
+        /*> * {
+            height: 100%;
+        }*/
+    }
+}
+

@@ -1,0 +1,18 @@
+
+.scTab {
+    /*border-bottom-color: var(--mantine-color-gray-light-hover);*/
+    border-bottom-color: var(--mantine-color-gray-2);
+    color: var(--mantine-color-gray-6);
+    flex-grow: 1;
+    &:hover {
+        color: var(--mantine-color-gray-7);
+        /*background-color: var(--mantine-color-gray-0);*/
+        border-bottom-color: var(--mantine-color-gray-4);
+    }
+    &[data-active] {
+        border-bottom-width: 2px;
+        color: var(--mantine-color-scBlue-6);
+        background-color: var(--mantine-color-scBlue-0) !important;
+        border-bottom-color: var(--mantine-color-scBlue-6) !important;
+    }
+}

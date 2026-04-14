@@ -1,0 +1,19 @@
+.attachmentCheck {
+    position: relative;
+    transition: border-color 150ms ease;
+
+    &[data-checked] {
+        border-color: var(--mantine-color-scBlue-3);
+    }
+
+    @mixin hover {
+        @mixin light {
+            background-color: var(--mantine-color-gray-0);
+            border-color: var(--mantine-color-gray-5);
+        }
+
+        @mixin dark {
+            background-color: var(--mantine-color-dark-6);
+        }
+    }
+}

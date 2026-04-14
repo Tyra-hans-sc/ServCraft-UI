@@ -1,0 +1,10 @@
+
+.fadeHintText {
+  .hintText {
+    transition: opacity ease-out 200ms;
+    opacity: .8;
+  }
+  &:hover .hintText {
+    opacity: 1;
+  }
+}

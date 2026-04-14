@@ -1,0 +1,67 @@
+.assetcard {
+    border: 2px solid var(--mantine-color-gray-4);
+    border-radius: var(--mantine-radius-sm);
+    padding: 0.5rem;
+    width: 13rem;
+    @media (max-width: 464px) {
+        flex-grow: 1
+    }
+    /*flex-grow: 1;*/
+    height: 6rem;
+    /*background: ${colors.white};*/
+    /*display: inline-block;*/
+    position: relative;
+    font-size: 0.8rem;
+
+    &:hover:has(.assetCardAddText) {
+        background-color: var(--mantine-color-scBlue-0);
+        border-color: var(--mantine-color-scBlue-6);
+    }
+    &:hover .assetCardAddText {
+        text-decoration: underline;
+    }
+}
+
+.assetheading {
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    position: absolute;
+    left: 0.5rem;
+    top: 0.25rem;
+    width: 100%;
+}
+
+.assetcard:hover {
+    background: #F0F0F066;
+    cursor: pointer;
+}
+
+.assetcontent {
+    width: 100%;
+    height: calc(100% - 0.5rem);
+    overflow: auto;
+    margin-top: 1rem;
+}
+
+.assetcontent::-webkit-scrollbar {
+    height: 0.5rem;
+    background: var(--mantine-color-gray-4)05;
+}
+
+.assetcontent::-webkit-scrollbar-thumb {
+    height: 0.5rem;
+    background: var(--mantine-color-gray-4)88;
+    border-radius: 3px;
+}
+
+.deletebutton {
+    position: absolute;
+    display: flex;
+    top: 0.1rem;
+    right: 0.1rem;
+}
+
+.assetCardAddText {
+    align-self: center;
+    /*margin-inline: auto;*/
+}

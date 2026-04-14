@@ -1,0 +1,30 @@
+
+.hover {
+    .hoverHide {
+        transition: 200ms ease-in-out;
+        opacity: 0;
+    }
+    &:hover {
+        .hoverHide {
+            opacity: 1;
+
+        }
+    }
+}
+
+
+/* Utility: force first child of viewport to be display:block */
+/*This is a hack to get the odd div child within a mantine ScrollArea to be display:block instead of display:table, which messes up the min width of certain elements*/
+.force-child-display-block > :first-child {
+    display: block !important;
+}
+
+
+
+.noPadding {
+    padding: 0;
+    & > :last-child:global(.mantine-Group-root) {
+        padding: 0 17px 32px 0;
+    }
+
+}

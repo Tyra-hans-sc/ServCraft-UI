@@ -1,0 +1,123 @@
+import LegacyEditTemplate from "../../template/edit-template";
+import SCModal from "../../../PageComponents/Modal/SCModal";
+import EditTemplate from "../../../PageComponents/Settings/Template/EditTemplate";
+
+const EditTemplateModal = ({ onSave, setTemplateModalVisibility, template, fromCreate = false}) => {
+
+    const onComponentSave = async (id) => {
+        onSave(id);
+        setTemplateModalVisibility(false);
+    };
+
+    return (
+
+        <SCModal open size={1000}>
+            <EditTemplate
+                onSave={onComponentSave}
+                template={template}
+                fromCreate={fromCreate}
+                fromExternalModule={true}
+                onCancel={() => setTemplateModalVisibility(false)}
+                stickyHeaderOffset={0}
+            />
+            {/*<LegacyEditTemplate onSave={onComponentSave} template={template} fromCreate={fromCreate}
+                          fromExternalModule={true} onCancel={() => setTemplateModalVisibility(false)}
+            />*/}
+        </SCModal>
+
+    /*<div className="overlay" onClick={(e) => e.stopPropagation()}>
+        <div className="container">
+            <EditTemplate onSave={onComponentSave} template={template} fromCreate={fromCreate} fromExternalModule={true}
+                          onCancel={() => setTemplateModalVisibility(false)}/>
+            {/!* <div className="row">
+                    <Button text="Cancel" extraClasses="hollow" onClick={() => setTemplateModalVisibility(false)} />
+                </div> *!/}
+            </div>
+
+            <style jsx>{`
+            .overlay {
+              align-items: center;
+              background-color: rgba(19, 106, 205, 0.9);
+              bottom: 0;
+              display: flex;
+              justify-content: center;
+              left: 0;
+              position: fixed;
+              right: 0;
+              top: 0;
+              z-index: 9999;
+            }
+            .container {
+              background-color: ${colors.white};
+              border-radius: ${layout.cardRadius};
+              padding: 2rem 3rem;
+              width: 70rem;
+              max-height: 80%;
+              overflow: auto;
+            }
+            .table-container {
+              height: 400px;
+              overflow-y: auto;
+            }
+            .search-container :global(.search) {
+              width: 100%;
+            }
+            .row {
+              display: flex;
+            }
+            .space-between {
+              justify-content: space-between;
+            }
+            .align-end {
+              align-items: flex-end;
+            }
+            .title {
+              color: ${colors.bluePrimary};
+              font-size: 1.125rem;
+              font-weight: bold;
+              margin-bottom: 1rem;
+            }
+            .arrow {
+              padding: 0.25rem 1rem;
+            }
+            .close {
+              width: 6rem;
+            }
+            .column {
+              display: flex;
+              flex-direction: column;
+              flex-grow: 1;
+              margin-left: 1.5rem;
+            }
+            .table-container-visible {
+              display: block;
+            }
+            .loading-overlay {
+              align-items: center;
+              background-color: rgba(245, 248, 251, 0.6);
+              bottom: 0;
+              border-radius: 8px;
+              display: none;
+              justify-content: center;
+              left: -1rem;
+              position: absolute;
+              right: -1rem;
+              top: 0.5rem;
+            }
+            .loading-overlay-visible {
+              display: flex;
+            }
+            .loading-overlay :global(.loader) {
+              border-color: rgba(28, 37, 44, 0.2);
+              border-left-color: ${colors.darkPrimary};
+              border-width: 0.25rem;
+              display: flex;
+              height: 1.5rem;
+              width: 1.5rem;
+            }
+          `}</style>
+        </div>*/
+    );
+};
+
+export default EditTemplateModal;

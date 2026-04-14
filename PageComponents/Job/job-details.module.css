@@ -1,0 +1,15 @@
+.inputMaxWidthOverride {
+    & input {
+        max-width: 100% !important;
+    }
+
+    & :has(> input) {
+        max-width: 100% !important;
+    }
+
+    & .mantine-InputWrapper-root {
+        max-width: 100% !important;
+        background-color: #003ED0;
+    }
+}
+

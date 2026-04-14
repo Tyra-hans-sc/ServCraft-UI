@@ -1,0 +1,26 @@
+.dropArea {
+  height: 140px;
+  border-radius: var(--mantine-radius-md);
+}
+
+.logoDropArea {
+  display: flex;
+  width: 167px;
+  height: 111px;
+  padding: 43px 82px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 6px;
+  border: 2px dashed var(--mantine-color-scBlue-2, var(--mantine-color-blue-2));
+}
+
+.logoDropAreaWarning {
+  border-color: #E03131;
+}
+
+.previewImageContainer {
+ position: relative;    
+ height: 140px;
+ border-radius: var(--mantine-radius-md);
+}

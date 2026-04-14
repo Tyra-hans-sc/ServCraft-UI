@@ -1,0 +1,33 @@
+.schedulerItem {
+  /*transition: all 0.2s ease;*/
+}
+
+.schedulerItem:hover {
+  /* Removed scale transformation to keep items static */
+  /*z-index: 5; !* This is a bad idea as any Z index beyond 2 covers header cells etc. *!*/
+}
+
+.schedulerItemInner {
+  transition: all 0.2s ease;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.schedulerItem:hover .schedulerItemInner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+  transition: background-color 0.2s ease;
+}
+
+.schedulerItem :global(.k-resize-handle),
+.schedulerItemInner :global(.k-resize-handle) {
+  z-index: 20;
+  pointer-events: auto;
+}

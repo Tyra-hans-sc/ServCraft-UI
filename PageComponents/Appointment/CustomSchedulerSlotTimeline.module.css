@@ -1,0 +1,30 @@
+.schedulerSlot {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.schedulerSlot:hover {
+  background-color: var(--mantine-color-gray-2);
+}
+
+.businessHourWeekend {
+  background-color: var(--mantine-color-gray-1);
+}
+
+.businessHourWeekday {
+  background-color: white;
+}
+
+.nonBusinessHour {
+  background-color: var(--mantine-color-gray-0);
+}
+
+.currentTimeSlot {
+  border-left: 2px solid var(--mantine-color-red-6);
+}
+
+.headerSlot {
+  text-align: center;
+  color: var(--mantine-color-dimmed);
+  font-size: var(--mantine-font-size-xs);
+}

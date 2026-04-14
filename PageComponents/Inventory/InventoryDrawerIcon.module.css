@@ -1,0 +1,55 @@
+.hiddenOnParentHover {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* For parent hover detection, we use a different approach */
+/* For a single parent hover (direct parent) */
+.parentHover1 {
+    display: inline-flex;
+}
+
+/* When the parent of our component is hovered, show the icon */
+*:hover > .parentHover1 .hiddenOnParentHover {
+    opacity: 1;
+}
+
+/* For two levels up parent hover */
+.parentHover2 {
+    display: inline-flex;
+}
+
+/* When the grandparent is hovered, show the icon */
+*:hover > * > .parentHover2 .hiddenOnParentHover {
+    opacity: 1;
+}
+
+/* For three levels up parent hover */
+.parentHover3 {
+    display: inline-flex;
+}
+
+/* When the great-grandparent is hovered, show the icon */
+*:hover > * > * > .parentHover3 .hiddenOnParentHover {
+    opacity: 1;
+}
+
+/* For four levels up parent hover */
+.parentHover4 {
+    display: inline-flex;
+}
+
+/* When the great-great-grandparent is hovered, show the icon */
+*:hover > * > * > * > .parentHover4 .hiddenOnParentHover {
+    opacity: 1;
+}
+
+/* For five levels up parent hover */
+.parentHover5 {
+    display: inline-flex;
+}
+
+/* When the great-great-great-grandparent is hovered, show the icon */
+*:hover > * > * > * > * > .parentHover5 .hiddenOnParentHover {
+    opacity: 1;
+}

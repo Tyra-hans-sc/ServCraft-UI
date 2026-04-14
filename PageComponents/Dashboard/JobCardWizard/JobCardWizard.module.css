@@ -1,0 +1,26 @@
+.topRow {
+  margin-top: var(--mantine-spacing-lg);
+}
+
+.leftCol {
+  min-width: 0;
+}
+
+.label {
+  flex: 1;
+}
+
+.value {
+  flex: 2;
+}
+
+.pill {
+  background-color: var(--mantine-color-gray-1);
+  border-radius: var(--mantine-radius-md);
+  padding: 6px 10px;
+  width: fit-content;
+}
+
+.description :global(textarea) {
+  border-color: var(--mantine-color-gray-3);
+}

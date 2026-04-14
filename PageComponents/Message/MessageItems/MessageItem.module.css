@@ -1,0 +1,217 @@
+.messageItem {
+    /* background-color: var(--mantine-color-gray-0); */
+
+    border: 1px solid var(--mantine-color-gray-3);
+
+    border-radius: 5px;
+    padding: 10px 20px 10px 10px;
+    cursor: pointer;
+
+    .gradientOverlay {
+        background: linear-gradient(to top, white, transparent);
+    }
+
+    /* Apply hover effect only when .inner is NOT hovered */
+    &:hover:not(:has(.inner:hover)) {
+        /* background-color: var(--mantine-color-gray-1); */
+    }
+
+    &:hover {
+        background-color: var(--mantine-color-gray-1);
+        /* border-color: var(--mantine-color-scBlue-3); */
+        /* border-left: 4px solid var(--mantine-color-gray-4); */
+
+        .gradientOverlay {
+            background: transparent;
+        }
+    }
+
+    &.expanded {
+        /* border-left: 4px solid var(--mantine-color-scBlue-2); */
+        height: auto;
+    }
+
+    height: 74px;
+    overflow: hidden;
+}
+
+.stripNewLines {
+    /*white-space: revert !important; !* Collapses new lines and spaces *!*/
+}
+
+.gradientOverlay {
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    /* Height of the gradient */
+}
+
+.attachmentCard {
+    border: 1px solid var(--mantine-color-gray-3);
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: clip;
+    &:hover{
+        border-color: var(--mantine-color-scBlue-3);
+    }
+}
+
+.attachmentCardHoverBlue {
+    background-color: var(--mantine-color-scBlue-0);
+    &:hover {
+        background-color: var(--mantine-color-scBlue-1);
+    }
+}
+
+.imageHoverEffect {
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.imageHoverEffect .image {
+    transition: transform 0.3s ease-in-out, scale 0.3s ease-in-out;
+    transform-origin: top center;
+}
+
+.imageHoverEffect:hover .image {
+    transform: scale(1.03);  /* Slight zoom effect */
+}
+
+
+.formAttachment {
+    background-color: var(--mantine-color-scBlue-1);
+    border-radius: 5px;
+    cursor: default;
+    color: var(--mantine-color-scBlue-5);
+}
+
+.documentAttachment {
+    background-color: var(--mantine-color-scBlue-6);
+    color: var(--mantine-color-scBlue-0);
+    border-radius: 5px;
+    cursor: default;
+}
+
+
+/*
+textOverflow: 'ellipsis',
+                borderColor: 'transparent',
+                backgroundColor: inputProps.error ? 'white' : 'rgba(0,28,136,0.75)',
+                zIndex: 1,
+                color: 'white',
+                // background: 'transparent',
+                textShadow: `-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000`,
+                caretColor: 'black',
+                borderRadius: '0 0 5px 5px',*/
+
+
+
+
+.placeholderCard {
+    border: 2px dashed var(--mantine-color-gray-3);
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: all 0.1s ease-in-out;
+    &:hover {
+        border-color: var(--mantine-color-scBlue-3);
+        background-color: var(--mantine-color-gray-1);
+        /*transform: translateY(-2px);*/
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+}
+
+
+.cardInput {
+
+    &::-webkit-scrollbar {
+        width: 8px;  /* Thin scrollbar */
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;  /* Transparent track */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--mantine-color-gray-3);  /* Muted gray color */
+        border-radius: 4px;  /* Rounded corners */
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: var(--mantine-color-gray-4);  /* Slightly darker on hover */
+    }
+
+
+    /*scrollbar-width: 3px;*/
+    margin-bottom: 2px;
+    border-radius: 0;
+    /*padding: 2px 30px 0 12px;*/
+    padding-right: 28px;
+
+    border-top: 1px solid #cdd3d9 !important;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    /*border-color: transparent;*/
+    &:focus {
+        border-bottom: 1px solid #cdd3d9 !important;
+        border-top: 1px solid #cdd3d9 !important;
+        background: #fff !important;
+        color: var(--mantine-color-scBlue-9);
+        text-shadow: none;
+    }
+
+    /*
+    &:focus {
+        border: 1px solid #cdd3d9 !important;
+        background: #fff !important;
+        color: var(--mantine-color-scBlue-9);
+        text-shadow: none;
+    }
+    &:not(:focus) {
+        scrollbar-color: white transparent;
+    }*/
+}
+
+.attachmentCard {
+    & .attachmentCardIcon:nth-child(1) { transition-delay: 0ms; }
+    & .attachmentCardIcon:nth-child(2) { transition-delay: 20ms; }
+    & .attachmentCardIcon:nth-child(3) { transition-delay: 40ms; }
+    & .attachmentCardIcon:nth-child(4) { transition-delay: 60ms; }
+}
+
+.attachmentCardIcon {
+    opacity: 0;
+    transition: opacity 0.1s ease-in-out;
+}
+
+.attachmentCard:hover {
+    & .attachmentCardIcon {
+        opacity: 1;
+        &:nth-child(1) { transition-delay: 80ms; }
+        &:nth-child(2) { transition-delay: 60ms; }
+        &:nth-child(3) { transition-delay: 40ms; }
+        &:nth-child(4) { transition-delay: 20ms; }
+        &:nth-child(5) { transition-delay: 0ms; }
+    }
+
+    & .attachmentToolContainer {
+        opacity: 1;
+    }
+}
+
+.attachmentTypeMenuItem:hover {
+    background-color: var(--mantine-color-scBlue-1);
+}
+
+.attachmentToolContainer {
+    &:not(.opened) {
+        opacity: .8;
+    }
+}
+
+
+

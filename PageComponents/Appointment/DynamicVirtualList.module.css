@@ -1,0 +1,81 @@
+.container {
+  padding: var(--mantine-spacing-md) 0;
+}
+
+.title {
+  padding: 0 var(--mantine-spacing-sm) 0 var(--mantine-spacing-lg);
+  font-weight: bold;
+  margin-bottom: var(--mantine-spacing-xs);
+}
+
+.searchInput {
+  max-width: 100%;
+  margin-bottom: var(--mantine-spacing-sm);
+}
+
+.listContainer {
+  position: relative;
+    border-top: 1px solid var(--mantine-color-gray-3);
+}
+
+.listItem {
+  position: absolute;
+  width: 100%;
+  padding: 8px var(--mantine-spacing-sm);
+  /* max-height kept unconstrained for dynamic heights via inline styles */
+
+  &:hover {
+    background-color: var(--mantine-color-gray-2);
+  }
+}
+
+/* Row without hover/active styles; used when rendering a bordered inner card */
+.listRow {
+  position: absolute;
+  width: 100%;
+  /* create spacing around the inner card */
+  padding: 8px var(--mantine-spacing-sm);
+}
+
+/* Inner clickable card for list items */
+.card {
+  background: var(--mantine-color-body);
+  border: 1px solid var(--mantine-color-gray-3);
+  border-radius: 12px;
+  padding: 12px var(--mantine-spacing-sm);
+}
+
+.cardClickable {
+  cursor: pointer;
+}
+
+.cardClickable:hover {
+  background-color: var(--mantine-color-gray-0);
+}
+
+.listItemClickable {
+  cursor: pointer;
+}
+
+.emptyMessage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  color: var(--mantine-color-dimmed);
+}
+
+.errorMessage {
+  color: var(--mantine-color-yellow-7);
+  font-size: var(--mantine-font-size-xs);
+  margin-top: var(--mantine-spacing-sm);
+}
+
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  height: 150px;
+}

@@ -1,0 +1,39 @@
+.card {
+  border: 1px solid var(--mantine-color-gray-3);
+  border-radius: var(--mantine-radius-md);
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.section {
+  margin-top: 1rem;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.divider {
+  height: 1px;
+  background-color: var(--mantine-color-gray-3);
+  margin: 1rem 0;
+}
+
+.rightTotal {
+  text-align: right;
+  color: var(--mantine-color-dark-6);
+}
+
+.infoTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}

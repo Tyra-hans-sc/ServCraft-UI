@@ -1,0 +1,130 @@
+/* Light theme - App consistent */
+.container {
+    display: flex;
+    position: relative;
+    background: #f8f9fa;
+    min-height: 80vh;
+    width: 90vw;
+    max-width: 90vw;
+    overflow: hidden;
+}
+
+.carousel {
+    flex-shrink: 0;
+}
+
+
+.zoomControlBar {
+    height: 20px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: 'space-between';
+    filter: drop-shadow(rgba(255, 255, 255, 0.5) 0px 0px 2px);
+    border-radius: 2rem;
+    opacity: 1;
+    z-index: 10;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.zoomControlBar:active {
+    background-color: rgba(0, 0, 0, 0.18);
+}
+
+.zoomControlBar :global(.MuiSlider-thumb) {
+    width: 10px;
+    height: 10px;
+}
+
+/* Back Button */
+.backBtn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
+    z-index: 100;
+}
+
+.backBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Top Right Controls - aligned block */
+.topRightControls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 100;
+}
+
+
+.infoPanel {
+    background: #ffffff;
+    border-left: 1px solid #dee2e6;
+    overflow-y: auto;
+    flex-shrink: 0;
+}
+
+.infoPanel::-webkit-scrollbar {
+    width: 8px;
+}
+
+.infoPanel::-webkit-scrollbar-track {
+    background: #f1f3f5;
+}
+
+.infoPanel::-webkit-scrollbar-thumb {
+    background: #ced4da;
+    border-radius: 4px;
+}
+
+.infoPanel::-webkit-scrollbar-thumb:hover {
+    background: #adb5bd;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .infoPanel {
+        width: 300px;
+    }
+
+    .topRightControls {
+        right: 16px;
+    }
+
+    .backBtn {
+        left: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90vw !important;
+    }
+
+    .infoPanel {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 280px;
+        box-shadow: -4px 0 12px rgba(0, 0, 0, 0.15);
+        z-index: 50;
+    }
+
+    .topRightControls {
+        right: 16px;
+        top: 16px;
+    }
+
+    .backBtn {
+        left: 16px;
+        top: 16px;
+    }
+}

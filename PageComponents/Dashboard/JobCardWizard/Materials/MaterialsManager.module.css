@@ -1,0 +1,41 @@
+.container {
+  margin-top: var(--mantine-spacing-md);
+}
+
+.controlsRow {
+  display: flex;
+  gap: var(--mantine-spacing-md);
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+
+.cards {
+  border: 1px solid var(--mantine-color-gray-3);
+  padding: var(--mantine-spacing-sm);
+  border-radius: 7px;
+}
+
+.card {
+  background: var(--mantine-color-white);
+  border: 1px solid var(--mantine-color-gray-3);
+  border-radius: var(--mantine-radius-md);
+  padding: var(--mantine-spacing-sm);
+  min-width: calc(50% - var(--mantine-spacing-sm));
+  max-width: calc(50% - var(--mantine-spacing-sm));
+  box-shadow: var(--mantine-shadow-xs);
+  @media (max-width: 464px) {
+    max-width: 100%;
+    flex: none;
+    width: 100%;
+  }
+}
+
+  .cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.qtyText {
+  color: var(--mantine-color-dark-5);
+}

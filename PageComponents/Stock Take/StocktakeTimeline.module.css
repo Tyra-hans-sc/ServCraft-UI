@@ -1,0 +1,158 @@
+/* Timeline.module.css */
+
+/* Replace your current .minimal block with this */
+.timelineContainer.minimal {
+    margin: 0;
+    padding: 0 !important;
+}
+
+.minimal .timeline {
+    margin-bottom: 0 !important;
+}
+
+.minimal .timelineLabel {
+    margin-top: 4px;
+    font-size: 12px;
+}
+
+.minimal .icon {
+    width: 15px;
+    height: 15px;
+}
+
+.minimal .timelineStep {
+    width: 20px;
+    height: 20px;
+}
+
+
+.timelineContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.timelineItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 2;
+    text-align: center;
+
+    &:first-child .timelineStepContainer {
+        justify-content: flex-start;
+    }
+    &:last-child .timelineStepContainer {
+        justify-content: flex-end;
+    }
+    &:first-child {
+        flex: 1;
+        align-items: flex-start;
+    }
+    &:last-child {
+        flex: 1;
+        align-items: flex-end;
+    }
+
+}
+
+
+
+
+
+
+.timelineStepContainer {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: relative;
+}
+
+.timelineStep {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: white;
+    border: 2px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    transition: all 0.3s ease;
+}
+
+.timelineLineLeft,
+.timelineLineRight {
+    height: 3px;
+    background-color: #e0e0e0;
+    flex: 1;
+    transition: all 0.3s ease;
+}
+
+.activeStep {
+    /* border-color and color now handled by inline styles */
+}
+
+.currentStep {
+    /* Now we only need to handle specific styles not related to color */
+    font-weight: bold;
+}
+
+.activeLine {
+    /* background-color now handled by inline styles */
+}
+
+
+.timelineLabel {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #4b5563;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.descriptionContainer {
+    /*background-color: #f9fafb;*/
+    /*border-radius: 8px;*/
+    /*padding: 20px;*/
+    /*box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);*/
+    /*margin-top: 20px;*/
+}
+
+.currentStatus h3,
+.cancelledStatus h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #1e3a8a;
+    font-size: 18px;
+}
+
+.cancelledStatus h3 {
+    color: #dc2626;
+}
+
+.currentStatus p,
+.cancelledStatus p {
+    margin: 0;
+    line-height: 1.5;
+    color: #4b5563;
+}

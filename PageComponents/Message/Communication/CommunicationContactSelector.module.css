@@ -1,0 +1,7 @@
+.option {
+    &[data-combobox-selected] {
+        background-color: var(--mantine-color-scBlue-1);
+        color: var(--mantine-color-scBlue-9);
+        font-weight: 500;
+    }
+}

@@ -1,0 +1,33 @@
+.printOption {
+  width: 100%;
+  border: 2px solid var(--mantine-color-gray-3);
+  border-radius: var(--mantine-radius-md);
+  padding: var(--mantine-spacing-lg);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  position: relative;
+  background-color: var(--mantine-color-gray-0);
+}
+
+.printOption:hover {
+  border-color: var(--mantine-color-scBlue-7);
+  background-color: var(--mantine-color-scBlue-0);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+}
+
+.iconContainer {
+  flex-shrink: 0;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.svgIcon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

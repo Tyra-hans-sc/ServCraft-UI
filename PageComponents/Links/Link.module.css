@@ -1,0 +1,12 @@
+
+.option {
+    &[data-combobox-selected] {
+        .optionTitle {
+            color: white;
+        }
+    }
+}
+
+.optionTitle {
+    color: var(--mantine-color-scBlue-7);
+}

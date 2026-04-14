@@ -1,0 +1,19 @@
+.more {
+  color: var(--mantine-color-blue-6);
+  cursor: pointer;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 1rem;
+  width: max-content;
+}
+
+/* Use CSS variables set from the component for dynamic colors */
+.status :global(input) {
+  color: var(--status-input-color);
+  background-color: var(--status-input-bg);
+}
+
+.status :global(label) {
+  color: var(--mantine-color-white);
+  opacity: 0.8;
+}

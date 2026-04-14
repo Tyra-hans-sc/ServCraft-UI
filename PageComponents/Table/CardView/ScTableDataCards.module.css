@@ -1,0 +1,17 @@
+.card {
+    cursor: pointer;
+    /*background-color: var(--mantine-color-gray-0);*/
+    border: 1px solid var(--mantine-color-gray-1);
+    &:hover {
+        background-color: var(--mantine-color-scBlue-0);
+        border-color: var(--mantine-color-scBlue-2);
+        .addNew {
+            color: var(--mantine-color-scBlue-5);
+            font-weight: 600 !important;
+        }
+    }
+
+    &.disabled {
+        background-color: var(--mantine-color-gray-2);
+    }
+}
