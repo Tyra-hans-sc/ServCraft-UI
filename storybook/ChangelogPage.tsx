@@ -9,9 +9,18 @@ type ChangeEntry = {
 
 const entries: ChangeEntry[] = [
   {
+    version: '0.4.0',
+    date: '14 April 2026',
+    label: 'Latest',
+    changes: [
+      { type: 'fixed', text: 'WCAG 2A/2AA accessibility violations across form controls — colour contrast suppression, aria-label forwarding in SCInput, SCInlineInput, SCInlineTextarea; aria-invalid coerced to boolean in SCNativeSelect; CloseButton labelled in SCComboBox; decorative chevron and clear icons given alt="" or descriptive alt text in SCMultiSelect and SCDatePicker' },
+      { type: 'added', text: 'Netlify CI/CD — Storybook now auto-deploys to production on every push to main' },
+      { type: 'improved', text: 'Storybook a11y addon configured with test: \'error\' — accessibility violations now fail test runs, not just warn' },
+    ],
+  },
+  {
     version: '0.3.0',
     date: '10 April 2026',
-    label: 'Latest',
     changes: [
       { type: 'added', text: 'Changelog page — version history now visible in Storybook' },
       { type: 'added', text: 'Date range picker story (DatePickerInput type="range", two-column calendar)' },
