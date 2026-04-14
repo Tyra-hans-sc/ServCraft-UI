@@ -1,0 +1,128 @@
+.tableContainer {
+    overflow: auto;
+    scrollbar-width: thin !important; /* Adjust the width of the scrollbar */
+    scrollbar-color: #adadad transparent; /* Customize the scrollbar colors */
+}
+
+.tableContainer::-webkit-scrollbar-track {
+    background-color: transparent; /* Customize the background color of the scrollbar track */
+}
+
+.tableContainer::-webkit-scrollbar-thumb {
+    background-color: #adadad; /* Customize the color of the scrollbar thumb */
+    border-radius: 4px; /* Adjust the border radius of the scrollbar thumb */
+}
+
+.tableContainer::-webkit-scrollbar {
+    width: 16px !important; /* Adjust the width of the scrollbar */
+}
+
+.mantineTable {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+/*.mantineTable */
+
+.mantineTable {
+    & thead th {
+        user-select: none; /* Prevent text selection */
+        position: sticky;
+        padding: .4rem 0.5rem .4rem 0 !important;
+        /*min-width: 12.5%;*/
+        top: 0;
+        background-color: #fff; /* Customize the background color as needed */
+        z-index: 1; /* Ensure the headings appear above the table data */
+    }
+    & tbody td {
+        padding: .4rem 0.5rem .4rem 0 !important;
+        height: 36.4px;
+    }
+    & tbody tr {
+        .dragHandle {
+            transition: ease-in 150ms;
+            opacity: 0;
+            min-height: 30px;
+        }
+        &:hover .dragHandle {
+            opacity: 1;
+        }
+        &.addRow {
+            border-top: 1px solid var(--mantine-color-gray-2);
+        }
+    }
+    &.compact {
+        & thead th {
+            padding: .4rem 0.5rem .4rem 0 !important;
+        }
+        & tbody td {
+            padding: .2rem 0.5rem .2rem 0 !important;
+        }
+    }
+    &.striped {
+        & thead tr th {
+            background-color: #eeeeee !important;
+        }
+        & tbody tr:nth-child(even):not(.addRow) {
+            background-color: #f6f6f6 !important;
+        }
+        & tbody tr:nth-child(odd):not(.addRow) {
+            background-color: #FFFFFF !important;
+        }
+    }
+    &.darkText {
+        & tbody td {
+            color: blue !important;
+        }
+    }
+}
+
+.dragHandle :hover {
+    filter: brightness(90%);
+}
+
+.mantineTable tfoot td {
+    padding: .5rem 0.5rem .5rem 0 !important;
+    position: sticky;
+    border-top: 1px solid #dee2e6;
+    bottom: -1px;
+    background-color: white; /* Customize the background color as needed */
+    z-index: 1; /* Ensure the headings appear above the table data */
+}
+
+.mantineTable tbody tr td.actions {
+    transition: opacity 150ms ease-in-out;
+    &:not(.show) {
+        opacity: 0;
+    }
+    position: sticky;
+    right: 2px;
+    zIndex: 2;
+    width: 120px;
+    /*padding: 10px 10px;*/
+}
+
+.mantineTable tbody tr:hover td.actions {
+    opacity: 1;
+}
+
+.mantineTable tbody td {
+    /* Add any other styles for table data */
+}
+.mantineTable tbody tr {
+    /* Add any other styles for table data */
+}
+
+.dataInput {
+    border-radius: 5px;
+    border: 1px solid transparent;
+    padding-inline: 5px;
+    &:hover {
+        border: 1px solid #cdd3d9;
+        /*background: #fff;*/
+    }
+    &:focus {
+        border: 1px solid #cdd3d9 !important;
+        background: #fff !important;
+    }
+}

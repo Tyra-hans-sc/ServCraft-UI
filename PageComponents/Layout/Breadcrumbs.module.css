@@ -1,0 +1,42 @@
+.breadcrumbs {
+  /*align-items: center;*/
+  /*display: flex;*/
+  /*margin-left: -0.75rem;*/
+}
+.breadcrumbs :global(.crumb) :global(a) {
+  color: var(--mantine-color-gray-7);
+    /*color: ${colors.labelGrey};*/
+  cursor: pointer;
+  /*margin-left: 0.75rem;*/
+  font-size: 14px;
+  text-decoration: none;
+}
+.breadcrumbs :global(.crumb:last-child) :global(a) {
+  color: var(--mantine-color-scBlue-9);
+    /*color: ${colors.darkPrimary};*/
+  font-size: 1rem;
+  font-weight: bold;
+  opacity: 0.8;
+}
+.breadcrumbs :global(.crumb) :global(img) {
+  margin-left: 0.5rem;
+}
+.breadcrumbs :global(.crumb:last-child) :global(img) {
+  display: none;
+}
+.breadcrumbs :global(.crumb-white) :global(a){
+  color: white;
+    /*color: ${colors.white};*/
+}
+.breadcrumbs :global(.crumb-white:last-child) :global(a) {
+  color: white;
+    /*color: ${colors.white};*/
+  opacity: 0.8;
+}
+.suppressed-crumb {
+  color: var(--mantine-color-gray-6);
+    /*color: ${colors.labelGrey};*/
+  margin-left: 0.75rem;
+  font-size: 14px;
+  text-decoration: none;
+}

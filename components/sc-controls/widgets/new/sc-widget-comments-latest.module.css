@@ -1,0 +1,26 @@
+
+.commentsContainer {
+    border-bottom: 1px solid var(--mantine-color-gray-3);
+    cursor: pointer;
+    transition: background-color 250ms ease-out;
+    &:hover {
+        background-color: var(--mantine-color-gray-1);
+        transition: background-color 150ms ease-in;
+    }
+}
+
+.visibilityTag {
+    font-size: 0.6rem;
+    padding: 0.2rem;
+    border-radius: 4px;
+    color: white;
+    margin-left: 0.5rem;
+}
+
+.private {
+    background: var(--grey-status);
+}
+
+.public {
+    background: var(--mantine-color-teal-6);
+}

@@ -1,0 +1,48 @@
+
+.hoverStyleWrapper {
+  /*::after {
+    visibility: visible;
+    content: '*';
+    color: red;
+  }*/
+  /*::placeholder {
+    !*visibility: visible;*!
+    !*content: '*';*!
+    color: red;
+    !*::after {
+      visibility: visible;
+      content: '*';
+      color: red;
+    }*!
+  }*/
+
+  .hoverStyleInput {
+    /*::after {
+      visibility: visible;
+      content: '*';
+      color: red;
+    }*/
+
+    border-color: transparent;
+    +.hoverStyleSection {
+      opacity: 0;
+    }
+    &:hover {
+      border-color: var(--mantine-color-gray-4);
+      +.hoverStyleSection {
+        opacity: 1;
+      }
+    }
+    &:focus {
+      border-color: var(--mantine-color-blue-7);
+      +.hoverStyleSection {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.label {
+  font-weight: 600;
+  font-size: 14px;
+}

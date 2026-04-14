@@ -1,0 +1,106 @@
+.statusLink {
+    pointer-events: auto;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    &.group {
+        color: var(--mantine-color-gray-6);
+        font-weight: 500;
+        font-size: var(--mantine-font-size-xs);
+        &:hover {
+            color: var(--mantine-color-gray-5);
+        }
+    }
+
+    &:hover {
+        color: #868686;
+        /*.colourItem {
+            filter: brightness(1.5);
+        }*/
+    }
+}
+
+.groupRoot {
+    border-bottom-color: transparent;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    transition: 200ms ease-in-out;
+    .legend {
+        color: var(--mantine-color-gray-5);
+    }
+    &:hover {
+        border-color: var(--mantine-color-scBlue-3);
+        border-top-right-radius: 4px;
+        border-top-left-radius: 4px;
+        .legend {
+            color: var(--mantine-color-scBlue-4);
+            &:hover {
+                color: var(--mantine-color-gray-6)
+            }
+        }
+    }
+}
+
+.unassignedItem {
+    cursor: pointer;
+    transition: 200ms ease-in-out;
+    background-color: transparent;
+    position: relative !important;
+    padding: 4px 8px;
+    /*margin: 0 15px;*/
+    font-weight: 500;
+    height: 1.5rem;
+    margin-inline: 10px;
+    margin-bottom: 10px;
+
+    &:hover {
+        .line {
+            border-color: var(--mantine-color-scBlue-3);
+        }
+        .content {
+            color: var(--mantine-color-scBlue-4);
+            &:hover {
+                color: var(--mantine-color-gray-6)
+            }
+        }
+    }
+
+    .content {
+        padding-inline: 2px;
+        position: absolute;
+        z-index: 1;
+        background-color: white;
+        font-size: var(--mantine-font-size-sm);
+        color: var(--mantine-color-gray-5);
+        /*position: relative;*/
+    }
+
+    .line {
+        height: 0;
+        border-top: 1px dashed var(--mantine-color-gray-3);
+        position: absolute;
+        color: var(--mantine-color-gray-5);
+        top: 50%; /* Centers the line */
+        /*bottom: 50%; !* Centers the line *!*/
+        /*top: 5.5px;*/
+        left: 0;
+        right: 0;
+        z-index: 0;
+        /*transform: translateY(-30px); !* Centers the line *!*/
+    }
+
+    .count {
+        right: 8px;
+        background-color: white;
+        position: absolute;
+        padding-inline: 3px;
+        z-index: 1;
+        text-decoration: none;
+        color: black;
+        font-weight: 700;
+        font-size: .825rem;
+    }
+}
+
