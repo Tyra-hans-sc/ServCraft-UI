@@ -1,0 +1,36 @@
+
+
+.day {
+    &[data-selected] {
+        color: var(--mantine-color-gray-0) !important;
+        background-color: var(--mantine-color-scBlue-6);
+    }
+    &[data-in-range] {
+        color: var(--mantine-color-scBlue-light-color);
+        background-color: var(--mantine-color-scBlue-light);
+    }
+    &[data-first-in-range] {
+        color: var(--mantine-color-gray-0);
+        background-color: var(--mantine-color-scBlue-6);
+    }
+    &[data-last-in-range] {
+        color: var(--mantine-color-gray-0);
+        background-color: var(--mantine-color-scBlue-6);
+    }
+    &:not([data-in-range]) {
+        &[data-weekend] {
+            color: var(--mantine-color-scBlue-6);
+        }
+        &[data-today] {
+            color: var(--mantine-color-scBlue-3);
+        }
+    }
+/*
+'&[dataSelected]': {
+    color: `${theme.colors.gray[0]} !important`,
+    backgroundColor: `${theme.colors.scBlue[6]} !important`
+},
+'&[dataWeekend]': {
+    color: `${theme.colors.scBlue[6]}`,
+}*/
+}

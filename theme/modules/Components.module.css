@@ -1,0 +1,12 @@
+.inputError {
+    border: 1px solid var(--mantine-color-yellow-6);
+    color: inherit;
+}
+.inputError::placeholder {
+    /*border: 1px solid var(--mantine-color-yellow-6);*/
+    /*color: inherit;*/
+    color:  var(--mantine-color-gray-5);
+}
+.errorHint {
+    color: var(--mantine-color-yellow-6);
+}
